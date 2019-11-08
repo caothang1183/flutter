@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_tutorial/screens/main.dart';
 
 class TextSection extends StatelessWidget {
   final String _title;

@@ -11,13 +11,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       onGenerateRoute: _routes(),
-      theme: ThemeData(
-        appBarTheme: AppBarTheme(textTheme: TextTheme(title: AppBarTextStyle)),
-        textTheme: TextTheme(
-          title: TitleTextStyle,
-          body1: Body1TextStyle,
-        ),
-      ),
+      theme: _theme(),
     );
   }
 
@@ -25,7 +19,7 @@ class App extends StatelessWidget {
     return (settings) {
       final Map<String, dynamic> arguments = settings.arguments;
       Widget screen;
-      switch (settings.arguments) {
+      switch (settings.name) {
         case HomeRoute:
           screen = Locations();
           break;
@@ -39,6 +33,12 @@ class App extends StatelessWidget {
     };
   }
   ThemeData _theme() {
-
+    return ThemeData(
+      appBarTheme: AppBarTheme(textTheme: TextTheme(title: AppBarTextStyle)),
+      textTheme: TextTheme(
+        title: TitleTextStyle,
+        body1: Body1TextStyle,
+      ),
+    );
   }
 }

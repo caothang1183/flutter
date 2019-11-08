@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_tutorial/models/location.dart';
+import 'package:flutter_tutorial/models/location_model.dart';
 import 'text_section.dart';
 import 'image_banner.dart';
 
@@ -10,12 +10,12 @@ class LocationDetail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final location = Location.fetchById(_locationId);
+    final location = LocationModel.fetchById(_locationId);
 
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Flutter Tutorial',
+          'Detail Location ' + this._locationId.toString(),
           style: TextStyle(
             color: Colors.black,
           ),
@@ -34,7 +34,7 @@ class LocationDetail extends StatelessWidget {
     );
   }
 
-  List<Widget> textSectionList(Location location) {
+  List<Widget> textSectionList(LocationModel location) {
     return location.facts
         .map((item) => TextSection(item.title, item.text))
         .toList();
