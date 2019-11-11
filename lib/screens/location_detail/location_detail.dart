@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tutorial/models/location_model.dart';
+import 'package:flutter_tutorial/screens/locations/tile_overlay.dart';
+import 'package:flutter_tutorial/screens/style.dart';
+import 'package:flutter_tutorial/widgets/location_tile.dart';
+
+import '../../widgets/image_banner.dart';
 import 'text_section.dart';
-import 'image_banner.dart';
 
 class LocationDetail extends StatelessWidget {
     final int _locationId;
@@ -15,12 +19,12 @@ class LocationDetail extends StatelessWidget {
         return Scaffold(
             appBar: AppBar(
                 title: Text(
-                    'Detail Location ' + this._locationId.toString(),
+                    location.name,
                     style: TextStyle(
-                        color: Colors.black,
+                        color: TextColorLight,
                     ),
                 ),
-                backgroundColor: Colors.white,
+                backgroundColor: TextColorDark,
             ),
             body: SingleChildScrollView(
                 child: Column(
@@ -28,6 +32,14 @@ class LocationDetail extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: <Widget>[
                         ImageBanner(location.imagePath),
+                        Padding(
+                            padding: EdgeInsets.symmetric(
+                                vertical: 20.0, horizontal: 4.0),
+                            child: LocationTile(
+                                location: location,
+                                darkTheme: false,
+                            ),
+                        )
                     ]
                         ..addAll(textSectionList(location)),
                 ),

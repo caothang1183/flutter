@@ -38,6 +38,8 @@ class App extends StatelessWidget {
       appBarTheme: AppBarTheme(textTheme: TextTheme(title: AppBarTextStyle)),
       textTheme: TextTheme(
         title: TitleTextStyle,
+        subtitle: SubtitleTextStyle,
+        caption: CaptionTextStyle,
         body1: Body1TextStyle,
       ),
     );
