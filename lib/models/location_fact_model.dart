@@ -1,6 +1,6 @@
 class LocationFactModel {
-  final String title;
-  final String text;
+    final String title;
+    final String text;
 
-  LocationFactModel(this.title, this.text);
+    LocationFactModel(this.title, this.text);
 }

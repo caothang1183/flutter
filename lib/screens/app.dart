@@ -32,6 +32,7 @@ class App extends StatelessWidget {
       return MaterialPageRoute(builder: (BuildContext context) => screen);
     };
   }
+
   ThemeData _theme() {
     return ThemeData(
       appBarTheme: AppBarTheme(textTheme: TextTheme(title: AppBarTextStyle)),
